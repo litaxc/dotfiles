@@ -1,12 +1,9 @@
 #!/bin/bash
-#--------------------------------------#
-#    Boostrap all your config files    #
-#              by Lita                 #
-#              Jan. 2018               #
-#--------------------------------------#
+# --------------------------------------
+# Boostrap all your config files
+# --------------------------------------
 
 # Define source and backup directory
-
 dir=$HOME/.dotfiles
 origdir=$HOME/.dotfiles.orig
 

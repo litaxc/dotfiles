@@ -1,0 +1,22 @@
+{
+	"font_size": 14,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"scroll_past_end": true,
+	"auto_complete": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": true,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"mdpopups.sublime_user_lang_map":
+	{
+		"s": [["r"], ["R-Box/syntax/R Extended"] ]
+	},
+	"theme": "Adaptive.sublime-theme",
+	"color_scheme": "Packages/sublime-nocolor/noColor.tmTheme",
+	"mdpopups.use_sublime_highlighter": true,
+}
