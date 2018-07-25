@@ -25,9 +25,10 @@ compinit
 precmd () {print -Pn "\e]2; %~/ \a"}
 
 
-# http proxy
+# proxies
 export http_proxy="http://127.0.0.1:49254"
 export https_proxy="http://127.0.0.1:49254"
+export socks_proxy="socks5://127.0.0.1:49255"
 
 
 # enable aws sdk completion
@@ -39,4 +40,4 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 
 # always attach to an tmux session
-[[ $TERM != 'screen' ]] && { tmux attach || exec tmux new-session -s base && exit; }
+[[ $TERM != 'screen' ]] && { tmux -CC attach || exec tmux -CC new-session -s base && exit; }

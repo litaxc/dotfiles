@@ -18,8 +18,9 @@ files=(
        .Rprofile
        .tmux.conf
        .zshrc
-       .pip/pip.conf
-       .config/pylintrc
+       .pip
+       .config
+       .flake8
 )
 
 
@@ -48,3 +49,6 @@ for file in ${files[@]}; do
     echo -e "\tSymlinking to $file in $dir"
     ln -is $dir/$file $HOME/$file
 done
+
+# sublime's setting cannot be symbolic link
+ln -i Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
