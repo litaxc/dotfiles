@@ -12,4 +12,4 @@ git clone https://github.com/litaxc/dotfiles.git ~/.dotfiles
 - [**tmux**](https://github.com/tmux/tmux): terminal + terminal + terminal + ...
 - [**iTerm2**](https://www.iterm2.com/): Something intended for opening tmux
 - [**Sublime Text**](https://www.sublimetext.com/): Editor that do the decent job
-- [**the silver searcher**](https://github.com/ggreer/the_silver_searcher): Fast file/code/content searcher
+- [**ripgrep**](https://github.com/BurntSushi/ripgrep): Fast file/code/content searcher
