@@ -38,6 +38,8 @@ source '/usr/local/bin/aws_zsh_completer.sh'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
+# enable kubernetes completion
+source <(kubectl completion zsh)
 
 # always attach to an tmux session
 [[ $TERM != 'screen' ]] && { tmux -CC attach || exec tmux -CC new-session -s base && exit; }

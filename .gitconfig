@@ -20,3 +20,11 @@ email = fireice47@gmail.com
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [mergetool]
 	prompt = false
+[format]
+	pretty = oneline
+[log]
+	abbrevCommit = true
+[status]
+	short = true
+[core]
+	excludesfile = /Users/lita/.gitignore_global
