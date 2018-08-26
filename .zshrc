@@ -20,6 +20,9 @@ alias scpa="scp -Ci ~/.ssh/awskeypair.pem"
 # prompt off
 PROMPT='%B[%@]%#%b '
 
+# enable docker completion
+fpath=(~/.zsh/completion $fpath)
+
 autoload -Uz compinit
 compinit
 precmd () {print -Pn "\e]2; %~/ \a"}
