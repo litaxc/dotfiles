@@ -22,14 +22,11 @@ Thumbs.db
 # npm modules
 node_modules
 
-# tern
+# tools
 .tern*
+.ipynb_checkpoints
+.vscode
+.pytest*
 
 # build
 build
-
-# jupyter
-.ipynb_checkpoints
-
-# vscode
-.vscode

@@ -2,7 +2,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export CLICOLOR=true
 
-export EDITOR=subl
+export EDITOR=code
 
 
 # handy alias
@@ -12,6 +12,7 @@ alias r="R -q --no-save"
 alias ni="node --inspect-brk"
 alias ssha="ssh -i ~/.ssh/awskeypair.pem -L 8889:127.0.0.1:8888"
 alias scpa="scp -Ci ~/.ssh/awskeypair.pem"
+alias vs=code  # vscode
 
 
 # some zsh specific settings
