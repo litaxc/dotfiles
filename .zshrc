@@ -35,14 +35,14 @@ export socks_proxy="socks5://127.0.0.1:49255"
 
 
 # enable aws sdk completion
-source '/usr/local/bin/aws_zsh_completer.sh'
+# source '/usr/local/bin/aws_zsh_completer.sh'
 
 # enable google cloud sdk completion
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # enable kubernetes completion
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # always attach to an tmux session
-[[ $TERM != 'screen' ]] && { tmux -CC attach || exec tmux -CC new-session -s base && exit; }
+# [[ $TERM != 'screen' ]] && { tmux -CC attach || exec tmux -CC new-session -s base && exit; }
