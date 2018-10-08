@@ -23,6 +23,7 @@ Thumbs.db
 node_modules
 
 # tools
+__pycache__
 .tern*
 .ipynb_checkpoints
 .vscode
