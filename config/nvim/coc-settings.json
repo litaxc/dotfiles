@@ -1,0 +1,41 @@
+{
+  "python.pythonPath": "python3",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["-S", "-l", "109"],
+  "python.linting.flake8Enabled": true,
+  "suggest.noselect": false,
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "python",
+    "rust",
+    "typescript",
+    "toml"
+  ],
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".git"
+      ],
+      "trace.server": "verbose",
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "terraform":{
+        "command": "terraform-lsp",
+        "filetypes": ["terraform"],
+        "initializationOptions": {}
+    }
+  },
+  "rust-analyzer.server.path": "rust-analyzer",
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": false,
+  "deno.importMap": "./import_map.json"
+}

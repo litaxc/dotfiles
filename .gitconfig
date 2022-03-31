@@ -1,12 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 name = lita
 email = fireice47@gmail.com
-[http]
-[https]
-[url "https://github.com/"]
-	insteadOf = git://github.com/
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
 [merge "jupyternotebook"]

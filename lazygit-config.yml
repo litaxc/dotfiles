@@ -1,0 +1,11 @@
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+gui:
+  theme:
+    lightTheme: true
+    selectedLineBgColor:
+      - cyan
+
+os:
+  openCommand: 'open {{filename}}'
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
