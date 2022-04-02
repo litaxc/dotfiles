@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lita/.oh-my-zsh"
@@ -68,7 +69,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(brew virtualenvwrapper rust terraform fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,9 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Encoding
 export LC_ALL="en_US.UTF-8"
 
-# PATH
-eval $(/opt/homebrew/bin/brew shellenv)
-
 # tmux
 alias tt="tmux -CC a || tmux -CC new"
 
@@ -124,7 +122,7 @@ alias kkk='k kustomize . | kubectl apply -f -'
 alias kkd='k kustomize . | kubectl delete -f -'
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+autoload -Uz compinit && compinit
 
 # csv viewer
 func csv() {
