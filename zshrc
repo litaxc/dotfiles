@@ -121,9 +121,6 @@ alias kk='k kustomize . | vi -Rc "set syntax=yaml"'
 alias kkk='k kustomize . | kubectl apply -f -'
 alias kkd='k kustomize . | kubectl delete -f -'
 
-autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-
 # csv viewer
 func csv() {
     cat $1 | sed -e 's/^,/^<NA>,/g; s/,/,<NA>/g; s/<NA>\([^,]\)/\1/g' | column -ts, | vi +"
