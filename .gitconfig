@@ -22,3 +22,5 @@ email = fireice47@gmail.com
 	short = true
 [core]
 	excludesfile = /Users/lita/.gitignore_global
+[init]
+	defaultBranch = main
