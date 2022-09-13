@@ -38,6 +38,10 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 " tnoremap <Esc> <C-\><C-n>  " but conflict with floating window
 
+" remember last position
+augroup remember-cursor-position
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
 
 call plug#begin('~/.vim/plugged')
 
