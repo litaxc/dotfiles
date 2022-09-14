@@ -112,6 +112,10 @@ export EDITOR=nvim
 alias vi=nvim
 alias lg=lazygit
 
+# python
+alias py=python
+alias ipy=ipython
+
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 
