@@ -5,6 +5,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" treat underscore as different word
+set iskeyword-=_
+
 " fix clipboard issue
 let $LANG='en_US.UTF-8'
 set clipboard=unnamed
