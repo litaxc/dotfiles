@@ -6,7 +6,9 @@ set tabstop=4
 set shiftwidth=4
 
 " treat underscore as different word
-set iskeyword-=_
+" set iskeyword-=_
+
+set spell
 
 " fix clipboard issue
 let $LANG='en_US.UTF-8'
