@@ -1,5 +1,5 @@
 set number relativenumber
-set mouse=a
+set mouse=nv
 set list
 set expandtab
 set tabstop=4
@@ -8,7 +8,8 @@ set shiftwidth=4
 " treat underscore as different word
 " set iskeyword-=_
 
-set spell
+" check spell in comment
+" set spell
 
 " fix clipboard issue
 let $LANG='en_US.UTF-8'
