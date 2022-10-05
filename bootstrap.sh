@@ -10,12 +10,21 @@ function install_brew() {
 function install_pkgs() {
     echo pkgs installing
     brew update && brew install -q \
+        btop \
+        dust \
+        dvc \
         fzf \
+        git \
+        glow \
         isacikgoz/taps/tldr \
         lazygit \
         neovim \
         node \
         ripgrep \
+        rust-analyzer \
+        rustup-init \
+        tmux \
+        virtualenvwrapper \
         zsh
     echo pkgs installed
 }
@@ -42,7 +51,7 @@ function setup_nvim() {
     echo nvim setting up
     nvim +"
         PlugInstall
-        CocInstall coc-pairs coc-pyright coc-rust-analyzer coc-tabnine coc-toml coc-vimtex
+        CocInstall coc-html coc-json coc-pairs coc-pyright coc-rust-analyzer coc-tabnine coc-toml coc-vimtex
         qa
     "
     echo nvim setup done
