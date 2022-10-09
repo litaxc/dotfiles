@@ -31,5 +31,6 @@
         "initializationOptions": {}
     }
   },
-  "rust-analyzer.server.path": "rust-analyzer"
+  "rust-analyzer.server.path": "rust-analyzer",
+  "yaml.format.enable":true
 }
