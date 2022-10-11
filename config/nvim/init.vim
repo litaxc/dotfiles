@@ -95,7 +95,7 @@ EOF
 
 "
 " coc.nvim
-let g:python3_host_prog='/usr/local/bin/python3'
+let g:python3_host_prog='/opt/homebrew/bin/python3'
 let g:terraform_fmt_on_save=1
 
 set updatetime=200

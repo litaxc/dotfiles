@@ -10,6 +10,7 @@ function install_brew() {
 function install_pkgs() {
     echo pkgs installing
     brew update && brew install -q \
+        black \
         btop \
         dust \
         dvc \
