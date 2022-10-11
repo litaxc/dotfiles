@@ -104,7 +104,6 @@ export LC_ALL="en_US.UTF-8"
 # tmux
 alias tt="tmux -CC a || tmux -CC new"
 alias tn="tmux -CC new -s "
-export TERM="xterm-256color"
 
 # psql
 export PAGER="less -S"
