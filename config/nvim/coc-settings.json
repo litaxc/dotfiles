@@ -3,6 +3,8 @@
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l", "109"],
   "python.linting.flake8Enabled": true,
+  "pyright.organizeimports.provider": "isort",
+  "python.sortImports.path": "/opt/homebrew/bin/isort",
   "suggest.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
@@ -32,5 +34,5 @@
     }
   },
   "rust-analyzer.server.path": "rust-analyzer",
-  "yaml.format.enable":true
+  "yaml.format.enable": true
 }
