@@ -1,6 +1,7 @@
 {
   "python.pythonPath": "python3",
   "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/opt/homebrew/bin/black",
   "python.formatting.blackArgs": ["-S", "-l", "109"],
   "python.linting.flake8Enabled": true,
   "pyright.organizeimports.provider": "isort",

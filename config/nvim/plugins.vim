@@ -18,6 +18,8 @@ Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " cypher syntax
 Plug 'memgraph/cypher.vim'
+" CSV
+Plug 'mechatroner/rainbow_csv'
 
 " theme
 Plug 'nikolvs/vim-sunbather'
@@ -62,6 +64,7 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
+nnoremap <silent><nowait> <space>l  :<C-u>CocList<cr>
 inoremap <silent><expr> <c-j>
             \ coc#pum#visible() ? coc#pum#next(1) :
             \ coc#refresh()
