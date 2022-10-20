@@ -136,3 +136,6 @@ func csv() {
     winc w
     "
 }
+
+# rust
+. $HOME/.cargo/env
