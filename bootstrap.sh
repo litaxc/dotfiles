@@ -52,7 +52,7 @@ function setup_nvim() {
     echo nvim setting up
     nvim +"
         PlugInstall
-        CocInstall coc-html coc-json coc-pairs coc-pyright coc-rust-analyzer coc-tabnine coc-toml coc-vimtex
+        CocInstall coc-html coc-json coc-pairs coc-pyright coc-rust-analyzer coc-tabnine coc-toml coc-vimtex coc-yaml
         qa
     "
     echo nvim setup done
