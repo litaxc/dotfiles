@@ -20,6 +20,8 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'memgraph/cypher.vim'
 " CSV
 Plug 'mechatroner/rainbow_csv'
+" hex color
+Plug 'norcalli/nvim-colorizer.lua'
 
 " theme
 Plug 'nikolvs/vim-sunbather'
@@ -34,14 +36,6 @@ colorscheme sunbather
 " fzf
 nnoremap <c-p> :Files<cr>
 nnoremap <c-b> :Buffer<cr>
-
-"
-" indentLine
-highlight IndentBlanklineChar ctermfg=255
-
-"
-" gitsigns
-lua require('gitsigns').setup()
 
 "
 " coc.nvim
@@ -102,3 +96,7 @@ nnoremap <leader>C :IPythonCellExecuteCellJump<CR>
 nnoremap [c :IPythonCellPrevCell<CR>
 nnoremap ]c :IPythonCellNextCell<CR>
 nnoremap <leader>d :SlimeSend1 %debug<CR>
+
+
+" other plugin settings in lua
+lua require('plugins')
