@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 export LC_ALL="en_US.UTF-8"
 
 # tmux
-alias tt="tmux -CC a || tmux -CC new"
+alias tt="tmux -CC a -t"
 alias tn="tmux -CC new -s "
 
 # psql

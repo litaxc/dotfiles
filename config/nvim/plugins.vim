@@ -65,12 +65,9 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
 nnoremap <silent><nowait> <space>l  :<C-u>CocList<cr>
-inoremap <silent><expr> <tab>
-            \ coc#pum#visible() ? coc#pum#next(1) :
-            \ coc#refresh()
-inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()
+inoremap <expr><c-p> coc#pum#visible() ? coc#pum#prev(1) : "<c-p>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "<CR>"
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
