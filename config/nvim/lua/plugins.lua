@@ -29,16 +29,15 @@ require('gitsigns').setup{
         map('n', '<leader>hd', gs.diffthis)
     end
 }
+
 -- indent_blankline
 vim.opt.termguicolors = true
-vim.opt.list = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#eeeeee gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineChar guifg=#eeeeee gui=nocombine]]
 
-require("indent_blankline").setup {
-    char_highlight_list = {
-        "IndentBlanklineIndent1",
-    }
-}
+require("indent_blankline").setup()
+for _, keymap in pairs({ 'zo', 'zO', 'zc', 'zC', 'za', 'zA', 'zv', 'zx', 'zX', 'zm', 'zM', 'zr', 'zR' }) do
+    vim.api.nvim_set_keymap('n', keymap,  keymap .. '<CMD>IndentBlanklineRefresh<CR>', { noremap=true, silent=true })
+end
 
 -- nvim-colorizer
 require('colorizer').setup()
