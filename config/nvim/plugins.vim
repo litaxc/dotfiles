@@ -45,7 +45,7 @@ let g:terraform_fmt_on_save=1
 set updatetime=200
 augroup coc
     autocmd BufWritePre *.go silent call CocAction('runCommand', 'editor.action.organizeImport')
-    autocmd BufWritePre *.py silent call CocAction('runCommand', 'editor.action.organizeImport')
+    " autocmd BufWritePre *.py silent call CocAction('runCommand', 'editor.action.organizeImport')
     autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup end
 
@@ -74,7 +74,11 @@ function! ShowDocumentation()
 endfunction
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocActionAsync('format')
+function SortImportsAndFormat()
+    call CocAction('runCommand', 'editor.action.organizeImport')
+    call CocActionAsync('format')
+endfunction
+nnoremap <leader>F :call SortImportsAndFormat()<CR>
 
 "
 " TeX

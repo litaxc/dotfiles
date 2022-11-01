@@ -6,13 +6,9 @@
   "python.linting.flake8Enabled": true,
   "pyright.organizeimports.provider": "isort",
   "python.sortImports.path": "/opt/homebrew/bin/isort",
+  "python.sortImports.args": ["--profile", "black"],
   "suggest.noselect": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "go",
-    "python",
-    "rust",
-    "toml"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": [],
   "languageserver": {
     "go": {
       "command": "gopls",
