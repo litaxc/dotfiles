@@ -75,8 +75,8 @@ endfunction
 
 " Add `:Format` command to format current buffer.
 function SortImportsAndFormat()
-    call CocAction('runCommand', 'editor.action.organizeImport')
-    call CocActionAsync('format')
+    silent! call CocAction('runCommand', 'editor.action.organizeImport')
+    silent call CocActionAsync('format')
 endfunction
 nnoremap <leader>F :call SortImportsAndFormat()<CR>
 
