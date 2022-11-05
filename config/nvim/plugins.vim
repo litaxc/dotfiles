@@ -97,6 +97,7 @@ nnoremap <leader>r :IPythonCellRun<CR>
 nnoremap <leader>c :IPythonCellExecuteCell<CR>
 xmap <leader>c <Plug>SlimeRegionSend
 nnoremap <leader>C :IPythonCellExecuteCellJump<CR>
+nnoremap <Leader>l :IPythonCellClear<CR>
 nnoremap [c :IPythonCellPrevCell<CR>
 nnoremap ]c :IPythonCellNextCell<CR>
 nnoremap <leader>d :SlimeSend1 %debug<CR>
