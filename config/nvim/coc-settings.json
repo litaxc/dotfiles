@@ -8,6 +8,7 @@
   "python.sortImports.path": "/opt/homebrew/bin/isort",
   "python.sortImports.args": ["--profile", "black"],
   "suggest.noselect": true,
+  "suggest.enablePreselect": false,
   "coc.preferences.formatOnSaveFiletypes": [],
   "languageserver": {
     "go": {
