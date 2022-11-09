@@ -42,3 +42,6 @@ end
 
 -- nvim-colorizer
 require('colorizer').setup()
+
+-- which-key
+require('which-key').setup()

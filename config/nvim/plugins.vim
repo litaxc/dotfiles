@@ -21,6 +21,8 @@ Plug 'memgraph/cypher.vim'
 Plug 'mechatroner/rainbow_csv'
 " hex color
 Plug 'norcalli/nvim-colorizer.lua'
+" which-key
+Plug 'folke/which-key.nvim'
 
 " theme
 Plug 'nikolvs/vim-sunbather'
