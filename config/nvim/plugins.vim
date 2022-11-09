@@ -1,8 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " A fuzzy file finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 " Intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Indent guide
@@ -34,8 +33,9 @@ colorscheme sunbather
 
 "
 " fzf
-nnoremap <c-p> :Files<cr>
-nnoremap <c-b> :Buffer<cr>
+nnoremap <c-p> <cmd>lua require('fzf-lua').files()<cr>
+nnoremap <c-b> <cmd>lua require('fzf-lua').buffers()<cr>
+nnoremap <leader>fg <cmd>lua require('fzf-lua').live_grep_native()<cr>
 
 "
 " coc.nvim
