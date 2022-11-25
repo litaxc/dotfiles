@@ -1,5 +1,5 @@
 set number relativenumber
-set mouse=n
+set mouse=nvc
 set list
 set expandtab
 set tabstop=4
