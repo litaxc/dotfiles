@@ -12,9 +12,6 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'lervag/vimtex'
 " terraform
 Plug 'hashivim/vim-terraform'
-" IPython
-Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " cypher syntax
 Plug 'memgraph/cypher.vim'
 " CSV
@@ -86,24 +83,6 @@ nnoremap <leader>F :call SortImportsAndFormat()<CR>
 " TeX
 filetype plugin indent on
 syntax enable
-
-"
-" IPython
-let g:slime_target = 'tmux'
-let g:slime_python_ipython = 1
-let g:slime_default_config = {
-            \ 'socket_name': get(split($TMUX, ','), 0),
-            \ 'target_pane': '{bottom}' }
-let g:slime_dont_ask_default = 1
-nnoremap <leader>r :IPythonCellRun<CR>
-nnoremap <leader>c :IPythonCellExecuteCell<CR>
-xmap <leader>c <Plug>SlimeRegionSend
-nnoremap <leader>C :IPythonCellExecuteCellJump<CR>
-nnoremap <Leader>l :IPythonCellClear<CR>
-nnoremap [c :IPythonCellPrevCell<CR>
-nnoremap ]c :IPythonCellNextCell<CR>
-nnoremap <leader>d :SlimeSend1 %debug<CR>
-
 
 " other plugin settings in lua
 lua require('plugins')
