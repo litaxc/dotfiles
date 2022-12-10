@@ -138,4 +138,15 @@ func csv() {
 }
 
 # rust
-. $HOME/.cargo/env
+# . $HOME/.cargo/env
+
+# backup
+function split40() {
+    split -b 40m $1 $1.part_
+    mv $1 _to_rm_$1
+}
+
+function unsplit40() {
+    cat $1.part_* > $1
+    ls $1.part_* | sed 's/\(.*.part_.*\)/mv \1 _to_rm_\1/' | sh
+}
