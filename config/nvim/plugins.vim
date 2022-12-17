@@ -22,12 +22,12 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/which-key.nvim'
 
 " theme
-Plug 'nikolvs/vim-sunbather'
+Plug 'shaunsingh/nord.nvim'
 
 call plug#end()
 
-set background=light
-colorscheme sunbather
+set background=dark
+colorscheme nord
 
 
 "

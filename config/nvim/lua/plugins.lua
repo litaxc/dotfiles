@@ -33,7 +33,6 @@ require('gitsigns').setup{
 
 -- indent_blankline
 vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineChar guifg=#eeeeee gui=nocombine]]
 
 require("indent_blankline").setup()
 for _, keymap in pairs({ 'zo', 'zO', 'zc', 'zC', 'za', 'zA', 'zv', 'zx', 'zX', 'zm', 'zM', 'zr', 'zR' }) do
