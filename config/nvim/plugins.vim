@@ -38,7 +38,7 @@ nnoremap <leader>fg <cmd>lua require('fzf-lua').live_grep_native()<cr>
 
 "
 " coc.nvim
-let g:python3_host_prog='/opt/homebrew/bin/python3'
+let g:python3_host_prog='/opt/homebrew/bin/python3.10'
 let g:terraform_fmt_on_save=1
 
 set updatetime=200

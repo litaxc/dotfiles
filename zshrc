@@ -98,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# brew
+export HOMEBREW_NO_GOOGLE_ANALYTICS=1
+
 # Encoding
 export LC_ALL="en_US.UTF-8"
 
