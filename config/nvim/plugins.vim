@@ -40,6 +40,15 @@ nnoremap <leader>fg <cmd>lua require('fzf-lua').live_grep_native()<cr>
 " coc.nvim
 let g:python3_host_prog='/opt/homebrew/bin/python3.10'
 let g:terraform_fmt_on_save=1
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-pairs',
+            \ 'coc-rust-analyzer',
+            \ 'coc-tabnine',
+            \ 'coc-toml',
+            \ 'coc-vimtex',
+            \ 'coc-yaml',
+            \ ]
 
 set updatetime=200
 augroup coc
