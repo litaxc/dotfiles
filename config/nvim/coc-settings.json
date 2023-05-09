@@ -32,5 +32,6 @@
     }
   },
   "rust-analyzer.server.path": "rust-analyzer",
+  "rust-analyzer.checkOnSave.command": "clippy",
   "yaml.format.enable": true
 }

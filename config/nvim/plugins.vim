@@ -43,6 +43,7 @@ let g:terraform_fmt_on_save=1
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-pairs',
+            \ 'coc-pyright',
             \ 'coc-rust-analyzer',
             \ 'coc-tabnine',
             \ 'coc-toml',
