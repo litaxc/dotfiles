@@ -6,6 +6,6 @@ gui:
       - cyan
 
 os:
-  openCommand: 'open {{filename}}'
-  editCommand: 'nvim'
-  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+  open: 'open {{filename}}'
+  edit: 'nvim'
+  Edit,EditAtLine: '{{editor}} +{{line}} {{filename}}'
