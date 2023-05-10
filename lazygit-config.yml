@@ -4,8 +4,3 @@ gui:
     lightTheme: true
     selectedLineBgColor:
       - cyan
-
-os:
-  open: 'open {{filename}}'
-  edit: 'nvim'
-  Edit,EditAtLine: '{{editor}} +{{line}} {{filename}}'
