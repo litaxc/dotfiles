@@ -24,6 +24,10 @@ Plug 'folke/which-key.nvim'
 " theme
 Plug 'shaunsingh/nord.nvim'
 
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
 call plug#end()
 
 set background=dark
@@ -94,6 +98,9 @@ nnoremap <leader>F :call SortImportsAndFormat()<CR>
 " TeX
 filetype plugin indent on
 syntax enable
+
+" treesitter
+highlight TreesitterContextBottom gui=underline guisp=Grey
 
 " other plugin settings in lua
 lua require('plugins')

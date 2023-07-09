@@ -44,3 +44,13 @@ require('colorizer').setup()
 
 -- which-key
 require('which-key').setup()
+
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {
+        "python",
+        "rust",
+        "yaml",
+    },
+
+}
