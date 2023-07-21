@@ -51,6 +51,7 @@ require'nvim-treesitter.configs'.setup {
         "python",
         "rust",
         "yaml",
+        "zig",
     },
 
 }

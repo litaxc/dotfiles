@@ -29,6 +29,10 @@
         "command": "terraform-lsp",
         "filetypes": ["terraform"],
         "initializationOptions": {}
+    },
+    "zls": {
+      "command": "zls",
+      "filetypes": ["zig"]
     }
   },
   "rust-analyzer.server.path": "rust-analyzer",
