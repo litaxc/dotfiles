@@ -4,6 +4,7 @@ set list
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set cursorline
 
 " fix clipboard issue
 let $LANG='en_US.UTF-8'
