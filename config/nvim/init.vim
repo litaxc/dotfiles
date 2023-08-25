@@ -36,5 +36,5 @@ augroup remember-cursor-position
 augroup END
 
 if !exists('g:vscode')
-    runtime plugins.vim
+    lua require('plugins')
 endif
