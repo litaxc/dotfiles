@@ -28,6 +28,8 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 set background=dark
@@ -42,62 +44,57 @@ nnoremap <leader>fg <cmd>lua require('fzf-lua').live_grep_native()<cr>
 
 "
 " coc.nvim
-let g:python3_host_prog='/opt/homebrew/bin/python3.10'
-let g:terraform_fmt_on_save=1
-let g:coc_global_extensions = [
-            \ 'coc-json',
-            \ 'coc-pairs',
-            \ 'coc-pyright',
-            \ 'coc-rust-analyzer',
-            \ 'coc-tabnine',
-            \ 'coc-toml',
-            \ 'coc-vimtex',
-            \ 'coc-yaml',
-            \ ]
-
-set updatetime=200
-augroup coc
-    autocmd BufWritePre *.go silent call CocAction('runCommand', 'editor.action.organizeImport')
-    " autocmd BufWritePre *.py silent call CocAction('runCommand', 'editor.action.organizeImport')
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-augroup end
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
-nnoremap <silent><nowait> <space>l  :<C-u>CocList<cr>
-inoremap <silent><expr> <c-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()
-inoremap <expr><c-p> coc#pum#visible() ? coc#pum#prev(1) : "<c-p>"
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-    if CocAction('hasProvider', 'hover')
-        call CocActionAsync('doHover')
-    else
-        call feedkeys('K','in')
-    endif
-endfunction
+" let g:python3_host_prog='/opt/homebrew/bin/python3.10'
+" let g:terraform_fmt_on_save=1
+" let g:coc_global_extensions = [
+"             \ 'coc-json',
+"             \ 'coc-pairs',
+"             \ 'coc-pyright',
+"             \ 'coc-rust-analyzer',
+"             \ 'coc-tabnine',
+"             \ 'coc-toml',
+"             \ 'coc-vimtex',
+"             \ 'coc-yaml',
+"             \ ]
+" 
+" set updatetime=200
+" augroup coc
+"     autocmd BufWritePre *.go silent call CocAction('runCommand', 'editor.action.organizeImport')
+"     " autocmd BufWritePre *.py silent call CocAction('runCommand', 'editor.action.organizeImport')
+"     " autocmd CursorHold * silent call CocActionAsync('highlight')
+" augroup end
+" 
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
+" nnoremap <silent><nowait> <space>l  :<C-u>CocList<cr>
+" inoremap <silent><expr> <c-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()
+" inoremap <expr><c-p> coc#pum#visible() ? coc#pum#prev(1) : "<c-p>"
+" inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" 
+" nnoremap <silent> K :call ShowDocumentation()<CR>
+" 
+" function! ShowDocumentation()
+"     if CocAction('hasProvider', 'hover')
+"         call CocActionAsync('doHover')
+"     else
+"         call feedkeys('K','in')
+"     endif
+" endfunction
 
 " Add `:Format` command to format current buffer.
-function SortImportsAndFormat()
-    silent! call CocAction('runCommand', 'editor.action.organizeImport')
-    silent call CocActionAsync('format')
-endfunction
-nnoremap <leader>F :call SortImportsAndFormat()<CR>
-
-"
-" TeX
-filetype plugin indent on
-syntax enable
+" function SortImportsAndFormat()
+"     silent! call CocAction('runCommand', 'editor.action.organizeImport')
+"     silent call CocActionAsync('format')
+" endfunction
+" nnoremap <leader>F :call SortImportsAndFormat()<CR>
 
 " treesitter
 highlight TreesitterContextBottom gui=underline guisp=Grey
