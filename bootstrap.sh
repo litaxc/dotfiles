@@ -13,17 +13,17 @@ function install_pkgs() {
         black \
         btop \
         dust \
-        dvc \
+        efm-langserver \
         fzf \
         git \
         glow \
         isacikgoz/taps/tldr \
+        isort \
         lazygit \
+        lua-language-server \
         neovim \
-        node \
+        pyright \
         ripgrep \
-        rust-analyzer \
-        rustup-init \
         tmux \
         virtualenvwrapper \
         zsh
@@ -36,25 +36,6 @@ function install_ohmyz() {
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
     echo oh my zsh installed
-}
-
-function install_vim_plug() {
-    if [[ ! -d $HOME/.vim/plugged ]]; then
-        echo vim plug installing
-        sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-               https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    fi
-    echo vim plug installed
-}
-
-# setup nvim
-function setup_nvim() {
-    echo nvim setting up
-    nvim +"
-        PlugInstall
-        qa
-    "
-    echo nvim setup done
 }
 
 function link_files() {
@@ -93,5 +74,3 @@ install_brew
 install_pkgs
 install_ohmyz
 link_files
-install_vim_plug
-setup_nvim
