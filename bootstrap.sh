@@ -41,12 +41,10 @@ function install_ohmyz() {
 function link_files() {
     files=(
         zshrc,$HOME/.zshrc
-        zprofile,$HOME/.zprofile
         config,$HOME/.config
         tmux.conf,$HOME/.tmux.conf
         .gitconfig,$HOME/.gitconfig
         .gitignore_global,$HOME/.gitignore_global
-        lazygit-config.yml,$HOME/Library/Application\ Support/lazygit/config.yml
     )
 
     BACKUP_DIR=$HOME/.dotfiles-$(date +%Y-%m-%dT%H:%M:%S)

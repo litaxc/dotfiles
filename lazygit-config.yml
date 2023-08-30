@@ -1,6 +1,0 @@
-# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
-gui:
-  theme:
-    lightTheme: true
-    selectedLineBgColor:
-      - cyan

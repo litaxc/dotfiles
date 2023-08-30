@@ -68,7 +68,7 @@ ZSH_THEME="clean"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew virtualenvwrapper rust terraform fzf)
+plugins=(brew virtualenvwrapper fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,9 +124,6 @@ alias ipy=ipython
 export FZF_DEFAULT_COMMAND='rg --files'
 
 alias k=kubectl
-alias kk='k kustomize . | vi -Rc "set syntax=yaml"'
-alias kkk='k kustomize . | kubectl apply -f -'
-alias kkd='k kustomize . | kubectl delete -f -'
 
 # csv viewer
 func csv() {
@@ -139,9 +136,6 @@ func csv() {
     winc w
     "
 }
-
-# rust
-# . $HOME/.cargo/env
 
 # backup
 function split40() {

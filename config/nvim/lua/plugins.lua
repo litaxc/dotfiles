@@ -23,7 +23,7 @@ autocmd('User', {
 
         vim.keymap.set('n', '<C-\\>', function() fzf.buffers() end, {})
         vim.keymap.set('n', '<C-p>', function() fzf.files() end, {})
-        vim.keymap.set('n', '<leader>fg', function() fzf.live_grep_glob() end, {})
+        vim.keymap.set('n', '<leader>rg', function() fzf.live_grep_glob() end, {})
         vim.keymap.set('n', '<F1>', function() fzf.help_tags() end, {})
 
         -- gitsigns
@@ -85,7 +85,6 @@ autocmd('User', {
 
         lsp.setup_servers({
             'pyright',
-            'zls',
         })
 
         local lspconfig = require('lspconfig')
