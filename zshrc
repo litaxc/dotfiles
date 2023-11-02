@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lita/.oh-my-zsh"
@@ -100,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 # brew
 export HOMEBREW_NO_GOOGLE_ANALYTICS=1
+export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
 # Encoding
 export LC_ALL="en_US.UTF-8"

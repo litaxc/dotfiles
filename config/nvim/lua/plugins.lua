@@ -4,7 +4,7 @@ autocmd('User', {
     pattern = 'PaqDoneInstall',
     callback = function()
         -- colorscheme
-        vim.cmd 'colorscheme nord'
+        vim.cmd 'colorscheme rose-pine-dawn'
 
         -- indent-blankline
         vim.opt.termguicolors = true
@@ -66,7 +66,7 @@ autocmd('User', {
                 'yaml',
             },
         }
-        vim.cmd 'highlight TreesitterContextBottom gui=underline guisp=Grey'
+        vim.cmd 'highlight TreesitterContextBottom guisp=Grey'
 
         -- lsp
         local lsp = require('lsp-zero').preset({})
@@ -85,6 +85,7 @@ autocmd('User', {
 
         lsp.setup_servers({
             'pyright',
+            'zls',
         })
 
         local lspconfig = require('lspconfig')

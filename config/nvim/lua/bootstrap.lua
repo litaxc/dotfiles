@@ -24,11 +24,11 @@ local function bootstrap_plugins()
     bootstrap_paq {
         'savq/paq-nvim',
 
-        'shaunsingh/nord.nvim',
+        { 'rose-pine/neovim', as = 'rose-pine' },
         'lukas-reineke/indent-blankline.nvim',
 
         'windwp/nvim-autopairs',
-        { 'ibhagwan/fzf-lua',                branch = 'main' },
+        { 'ibhagwan/fzf-lua', branch = 'main' },
         'lewis6991/gitsigns.nvim',
         { 'nvim-treesitter/nvim-treesitter', run = function() vim.cmd ':TSUpdate' end },
         'nvim-treesitter/nvim-treesitter-context',
@@ -37,7 +37,7 @@ local function bootstrap_plugins()
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
         'L3MON4D3/LuaSnip',
-        { 'VonHeikemen/lsp-zero.nvim', branch = 'v2.x' },
+        { 'VonHeikemen/lsp-zero.nvim',       branch = 'v2.x' },
         'kevinhwang91/nvim-bqf',
     }
 end
