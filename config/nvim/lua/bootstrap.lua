@@ -30,7 +30,7 @@ local function bootstrap_plugins()
         'windwp/nvim-autopairs',
         { 'ibhagwan/fzf-lua', branch = 'main' },
         'lewis6991/gitsigns.nvim',
-        { 'nvim-treesitter/nvim-treesitter', run = function() vim.cmd ':TSUpdate' end },
+        { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
         'nvim-treesitter/nvim-treesitter-context',
 
         'neovim/nvim-lspconfig',
