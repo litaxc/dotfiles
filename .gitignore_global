@@ -26,6 +26,7 @@ node_modules
 __pycache__
 .tern*
 .ipynb_checkpoints
+.venv
 .vscode
 .pytest*
 .coverage

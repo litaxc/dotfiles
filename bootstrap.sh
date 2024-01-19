@@ -25,7 +25,7 @@ function install_pkgs() {
         pyright \
         ripgrep \
         tmux \
-        virtualenvwrapper \
+        virtualfish \
         zsh
     echo pkgs installed
 }
