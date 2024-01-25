@@ -25,24 +25,13 @@ function install_pkgs() {
         pyright \
         ripgrep \
         tmux \
-        virtualfish \
-        zsh
+        virtualfish
     echo pkgs installed
-}
-
-function install_ohmyz() {
-    if [[ ! -d $HOME/.oh-my-zsh ]]; then
-        echo oh my zsh installing
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    fi
-    echo oh my zsh installed
 }
 
 function link_files() {
     files=(
-        zshrc,$HOME/.zshrc
         config,$HOME/.config
-        tmux.conf,$HOME/.tmux.conf
         .gitconfig,$HOME/.gitconfig
         .gitignore_global,$HOME/.gitignore_global
     )
@@ -70,5 +59,4 @@ function link_files() {
 
 install_brew
 install_pkgs
-install_ohmyz
 link_files
