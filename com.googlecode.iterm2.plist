@@ -6,6 +6,8 @@
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>Command</key>
 	<string>/opt/homebrew/bin/fish</string>
 	<key>Custom Color Presets</key>
@@ -379,6 +381,10 @@
 	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524576</integer>
+	<key>NeverWarnAboutShortLivedSessions_14A443B9-9E9A-4904-A7BB-4C8E0B2F2F68</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_14A443B9-9E9A-4904-A7BB-4C8E0B2F2F68_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>

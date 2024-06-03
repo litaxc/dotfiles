@@ -9,7 +9,7 @@ autocmd('User', {
         -- indent-blankline
         vim.opt.termguicolors = true
 
-        require('ibl').setup {
+        require 'ibl'.setup {
             indent = { char = "│" },
             scope = { enabled = false }
         }
@@ -66,13 +66,14 @@ autocmd('User', {
         require 'nvim-treesitter.configs'.setup {
             ensure_installed = {
                 'python',
+                'vimdoc',
                 'yaml',
             },
         }
         vim.cmd 'highlight TreesitterContextBottom guisp=Grey'
 
         -- lsp
-        local lsp = require('lsp-zero').preset({})
+        local lsp = require 'lsp-zero'.preset({})
 
         lsp.on_attach(function(_, buffer)
             lsp.default_keymaps({ buffer = buffer })
@@ -86,12 +87,12 @@ autocmd('User', {
             end, opts)
         end)
 
-        lsp.setup_servers({
+        lsp.setup_servers {
             'pyright',
             'zls',
-        })
+        }
 
-        local lspconfig = require('lspconfig')
+        local lspconfig = require 'lspconfig'
         lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
         lspconfig.efm.setup {
             init_options = { documentFormatting = true },
