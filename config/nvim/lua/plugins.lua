@@ -107,6 +107,24 @@ autocmd('User', {
         }
 
         lsp.setup()
+
+        local iron = require 'iron.core'
+        iron.setup {
+            config = {
+                repl_definition = {
+                    python = {
+                        command = { 'ipython', '--no-autoindent' },
+                        format = require 'iron.fts.common'.bracketed_paste_python,
+                    }
+                },
+                repl_open_cmd = require 'iron.view'.split.botright(0.2)
+            },
+            keymaps = {
+                send_motion = '<space>rc',
+                visual_send = '<space>rc',
+                send_paragraph = '<space>rp',
+            }
+        }
     end
 })
 

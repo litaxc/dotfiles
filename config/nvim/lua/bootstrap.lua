@@ -39,6 +39,8 @@ local function bootstrap_plugins()
         'L3MON4D3/LuaSnip',
         { 'VonHeikemen/lsp-zero.nvim',       branch = 'v2.x' },
         'kevinhwang91/nvim-bqf',
+
+        'Vigemus/iron.nvim',
     }
 end
 
