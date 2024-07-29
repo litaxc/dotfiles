@@ -10,22 +10,22 @@ function install_brew() {
 function install_pkgs() {
     echo pkgs installing
     brew update && brew install -q \
-        black \
         btop \
         dust \
-        efm-langserver \
+        fish \
         fzf \
         git \
         glow \
         isacikgoz/taps/tldr \
-        isort \
         lazygit \
         lua-language-server \
         neovim \
-        pyright \
+        pipx \
         ripgrep \
         tmux \
         virtualfish
+
+    pipx install -q basedpyright
     echo pkgs installed
 }
 

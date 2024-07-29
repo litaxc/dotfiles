@@ -77,31 +77,33 @@ autocmd('User', {
 
         lsp.on_attach(function(_, buffer)
             lsp.default_keymaps({ buffer = buffer })
-            local opts = { buffer = buffer }
-
-            vim.keymap.set({ 'n', 'x' }, 'gq', function()
-                vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-            end, opts)
-            vim.keymap.set({ 'n', 'x' }, 'gr', function()
-                vim.lsp.buf.references({ includeDeclaration = false })
-            end, opts)
         end)
 
         lsp.setup_servers {
-            'pyright',
-            'zls',
+            'basedpyright',
+            'gopls',
+            'lua_ls',
+            'ruff',
         }
 
         local lspconfig = require 'lspconfig'
         lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-        lspconfig.efm.setup {
-            init_options = { documentFormatting = true },
+        lspconfig.basedpyright.setup {
             settings = {
-                languages = {
-                    python = {
-                        { formatCommand = 'black -S -l 109 -',       formatStdin = true },
-                        { formatCommand = 'isort --profile black -', formatStdin = true }
+                basedpyright = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        diagnosticMode = "openFilesOnly",
+                        useLibraryCodeForTypes = true,
+                        typeCheckingMode = 'standard',
                     }
+                }
+            }
+        }
+        lspconfig.ruff.setup {
+            init_options = {
+                settings = {
+                    lineLength = 109,
                 }
             }
         }
