@@ -113,6 +113,9 @@ autocmd('User', {
             init_options = {
                 settings = {
                     lineLength = 109,
+                    lint = {
+                        ignore = { 'F401', 'E741' },
+                    }
                 }
             }
         }
@@ -120,25 +123,11 @@ autocmd('User', {
         lsp.setup()
 
         -- ipython
-        local iron = require 'iron.core'
-        iron.setup {
-            config = {
-                repl_definition = {
-                    python = {
-                        command = { 'ipython', '--no-autoindent' },
-                        format = require 'iron.fts.common'.bracketed_paste_python,
-                    }
-                },
-                repl_open_cmd = require 'iron.view'.split.botright(0.2)
-            },
-            keymaps = {
-                visual_send = '<space>sc',
-                send_paragraph = '<space>sp',
-                send_until_cursor = '<space>su',
-                interrupt = '<space>s<space>',
-            },
-            ignore_blank_lines = true,
-        }
+        vim.keymap.set("n", "<space>mi", ":MoltenInit<CR>", { silent = true })
+        vim.keymap.set("n", "<space>ii", ":MoltenInterrupt<CR>", { silent = true })
+        vim.keymap.set("n", "<space>rl", ":MoltenEvaluateLine<CR>", { silent = true })
+        vim.keymap.set("n", "<space>rr", ":MoltenReevaluateCell<CR>", { silent = true })
+        vim.keymap.set("v", "<space>r", ":<C-u>MoltenEvaluateVisual<CR>gv<ESC>", { silent = true })
     end
 })
 

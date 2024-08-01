@@ -38,7 +38,7 @@ local function bootstrap_plugins()
         'hrsh7th/cmp-nvim-lsp',
         { 'VonHeikemen/lsp-zero.nvim',       branch = 'v2.x' },
 
-        'Vigemus/iron.nvim',
+        { 'benlubas/molten-nvim',            build = ':UpdateRemotePlugins' },
     }
 end
 
