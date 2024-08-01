@@ -77,13 +77,22 @@ autocmd('User', {
 
         lsp.on_attach(function(_, buffer)
             lsp.default_keymaps({ buffer = buffer })
+
+            vim.lsp.handlers['textDocument/definition'] = function(_, result, _, _)
+                if #result == 1 then
+                    vim.lsp.util.jump_to_location(result[1])
+                else
+                    fzf.lsp_definitions()
+                end
+            end
+            vim.keymap.set('n', 'gr', fzf.lsp_references, { buffer = buffer })
         end)
 
         lsp.setup_servers {
-            'basedpyright',
             'gopls',
-            'lua_ls',
-            'ruff',
+            -- 'basedpyright',
+            -- 'lua_ls',
+            -- 'ruff',
         }
 
         local lspconfig = require 'lspconfig'
@@ -110,6 +119,7 @@ autocmd('User', {
 
         lsp.setup()
 
+        -- ipython
         local iron = require 'iron.core'
         iron.setup {
             config = {
@@ -122,10 +132,12 @@ autocmd('User', {
                 repl_open_cmd = require 'iron.view'.split.botright(0.2)
             },
             keymaps = {
-                send_motion = '<space>rc',
-                visual_send = '<space>rc',
-                send_paragraph = '<space>rp',
-            }
+                visual_send = '<space>sc',
+                send_paragraph = '<space>sp',
+                send_until_cursor = '<space>su',
+                interrupt = '<space>s<space>',
+            },
+            ignore_blank_lines = true,
         }
     end
 })
