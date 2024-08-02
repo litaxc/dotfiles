@@ -123,11 +123,24 @@ autocmd('User', {
         lsp.setup()
 
         -- ipython
-        vim.keymap.set("n", "<space>mi", ":MoltenInit<CR>", { silent = true })
+        local nbv = require 'notebook-navigator'
+        vim.keymap.set("n", "<space>mi", ":MoltenInit python3<CR>", { silent = true })
+        vim.keymap.set("n", "<space>md", ":MoltenDeinit<CR>", { silent = true })
         vim.keymap.set("n", "<space>ii", ":MoltenInterrupt<CR>", { silent = true })
-        vim.keymap.set("n", "<space>rl", ":MoltenEvaluateLine<CR>", { silent = true })
-        vim.keymap.set("n", "<space>rr", ":MoltenReevaluateCell<CR>", { silent = true })
-        vim.keymap.set("v", "<space>r", ":<C-u>MoltenEvaluateVisual<CR>gv<ESC>", { silent = true })
+        vim.keymap.set("n", "<space>oh", ":MoltenHideOutput<CR>", { silent = true })
+        vim.keymap.set("n", "<space>oo", ":noautocmd MoltenEnterOutput<CR>", { silent = true })
+        vim.keymap.set('n', '<space>X', nbv.run_cell)
+        vim.keymap.set('n', '<space>x', nbv.run_and_move)
+        vim.keymap.set('n', ']x', function()
+            nbv.move_cell 'd'
+            vim.api.nvim_feedkeys('zz', 'n', false)
+        end)
+        vim.keymap.set('n', '[x', function()
+            nbv.move_cell 'u'
+            vim.api.nvim_feedkeys('zz', 'n', false)
+        end)
+        vim.keymap.set("v", "<space>X", ":<C-u>MoltenEvaluateVisual<CR>gv<ESC>", { silent = true })
+        vim.api.nvim_set_hl(0, 'MoltenCell', {})
     end
 })
 

@@ -39,6 +39,7 @@ local function bootstrap_plugins()
         { 'VonHeikemen/lsp-zero.nvim',       branch = 'v2.x' },
 
         { 'benlubas/molten-nvim',            build = ':UpdateRemotePlugins' },
+        'GCBallesteros/NotebookNavigator.nvim',
     }
 end
 
