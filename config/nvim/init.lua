@@ -6,8 +6,8 @@ vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.cursorline = true
+vim.o.scrolloff = 100
 
-vim.env.LANG = 'en_US.UTF-8' -- fix clipboard issue
 vim.o.clipboard = 'unnamed'
 
 vim.o.foldmethod = 'syntax'
@@ -15,15 +15,13 @@ vim.o.foldenable = false
 
 vim.o.autoread = true
 
-vim.cmd 'highlight Folded ctermbg=None ctermfg=102'
-vim.cmd 'highlight DiffText ctermbg=1'
-
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local editor_basics = augroup('editor_basics', {})
 autocmd('CursorHold', {
+    desc = "reload buffer if underlaying file changed",
     group = editor_basics,
     pattern = '*',
     callback = function()
@@ -33,11 +31,12 @@ autocmd('CursorHold', {
     end
 })
 autocmd('BufReadPost', {
+    desc = "jump to the last cursor position on file open",
     group = editor_basics,
     pattern = '*',
     callback = function()
         if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
-            vim.cmd 'normal! g`"'
+            vim.fn.setpos(".", vim.fn.getpos("'\""))
         end
     end
 })
@@ -45,6 +44,7 @@ autocmd('BufReadPost', {
 
 local filetypedetect = augroup('filetypedetect', {})
 autocmd('FileType', {
+    group = filetypedetect,
     pattern = { 'json', 'yaml', 'typescript', 'javascript' },
     callback = function()
         vim.opt_local.tabstop = 2
@@ -53,12 +53,14 @@ autocmd('FileType', {
     end
 })
 autocmd('FileType', {
+    group = filetypedetect,
     pattern = 'python',
     callback = function()
         vim.opt_local.foldmethod = 'indent'
     end
 })
 autocmd('FileType', {
+    group = filetypedetect,
     pattern = 'go',
     callback = function()
         vim.opt_local.tabstop = 8
