@@ -75,7 +75,20 @@ autocmd('User', {
         -- lsp
         local lsp = require 'lsp-zero'.preset({})
 
-        lsp.on_attach(function(_, buffer)
+        local sort_python_imports = function()
+            local params = {
+                command = "ruff.applyOrganizeImports",
+                arguments = { { uri = vim.uri_from_bufnr(0), version = 0 } },
+            }
+            local clients = vim.lsp.get_clients {
+                bufnr = vim.api.nvim_get_current_buf(),
+                name = 'ruff',
+            }
+            for _, client in ipairs(clients) do
+                client.request('workspace/executeCommand', params)
+            end
+        end
+        lsp.on_attach(function(client, buffer)
             lsp.default_keymaps({ buffer = buffer })
 
             vim.lsp.handlers['textDocument/definition'] = function(_, result, _, _)
@@ -84,6 +97,11 @@ autocmd('User', {
                 else
                     fzf.lsp_definitions()
                 end
+            end
+            local ori_format_fn = vim.lsp.handlers['textDocument/formatting']
+            vim.lsp.handlers['textDocument/formatting'] = function(err, result, ctx, config)
+                vim.lsp.buf.format { bufnr = buffer, id = client.id }
+                sort_python_imports()
             end
             vim.keymap.set('n', 'gr', fzf.lsp_references, { buffer = buffer })
         end)
@@ -100,6 +118,7 @@ autocmd('User', {
         lspconfig.basedpyright.setup {
             settings = {
                 basedpyright = {
+                    disableOrganizeImports = true,
                     analysis = {
                         autoSearchPaths = true,
                         diagnosticMode = "openFilesOnly",
@@ -109,14 +128,22 @@ autocmd('User', {
                 }
             }
         }
+
         lspconfig.ruff.setup {
             init_options = {
                 settings = {
                     lineLength = 109,
                     lint = {
+                        extendSelect = { 'I' },
                         ignore = { 'F401', 'E741' },
                     }
                 }
+            },
+            commands = {
+                RuffOrganizeImports = {
+                    sort_python_imports,
+                    description = "Ruff: Format imports",
+                },
             }
         }
 
