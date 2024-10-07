@@ -34,6 +34,7 @@ function link_files() {
         config,$HOME/.config
         .gitconfig,$HOME/.gitconfig
         .gitignore_global,$HOME/.gitignore_global
+        tmux.conf,$HOME/.tmux.conf
     )
 
     BACKUP_DIR=$HOME/.dotfiles-$(date +%Y-%m-%dT%H:%M:%S)
