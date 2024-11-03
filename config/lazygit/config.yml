@@ -1,9 +1,9 @@
 git:
   paging:
     colorArg: always
-    pager: delta --light --paging=never
+    pager: delta --dark --paging=never
 
 gui:
   theme:
-    selectedLineBgColor:
-      - "#9ccfd8"
+    # selectedLineBgColor:
+    #   - "#9ccfd8"  # light

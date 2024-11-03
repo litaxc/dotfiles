@@ -4,7 +4,7 @@ autocmd('User', {
     pattern = 'PaqDoneInstall',
     callback = function()
         -- colorscheme
-        vim.cmd 'colorscheme rose-pine-dawn'
+        vim.cmd 'colorscheme rose-pine-main'
 
         -- indent-blankline
         vim.opt.termguicolors = true
@@ -19,6 +19,7 @@ autocmd('User', {
 
         -- fzf
         local fzf = require 'fzf-lua'
+        fzf.setup { lsp = { symbols = { symbol_style = 3 } } }
 
         vim.keymap.set('n', '<C-\\>', function() fzf.buffers() end, {})
         vim.keymap.set('n', '<C-p>', function() fzf.files() end, {})
@@ -88,12 +89,6 @@ autocmd('User', {
             end
             vim.keymap.set('n', 'gr', fzf.lsp_references, { buffer = buffer })
         end)
-
-        lsp.setup_servers {
-            -- 'basedpyright',
-            -- 'lua_ls',
-            -- 'ruff',
-        }
 
         local lspconfig = require 'lspconfig'
 
@@ -180,6 +175,7 @@ autocmd('User', {
             pattern = { 'python' },
             callback = function()
                 local nbv = require 'notebook-navigator'
+                nbv.setup { cell_markers = { python = "### %%%%%%%%%% ###" } }
                 local function map(mode, l, r, opts)
                     opts = opts or { silent = true }
                     vim.keymap.set(mode, l, r, opts)
