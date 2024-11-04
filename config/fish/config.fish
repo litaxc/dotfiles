@@ -9,6 +9,7 @@ if status is-interactive
     abbr k kubectl
     abbr tt "tmux -CC a -t"
     abbr tn "tmux -CC new -s"
+    abbr n nerdctl
 
     vf install
     vf addplugins auto_activation
