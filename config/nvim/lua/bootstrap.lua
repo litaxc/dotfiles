@@ -40,6 +40,8 @@ local function bootstrap_plugins()
 
         { 'benlubas/molten-nvim',            build = ':UpdateRemotePlugins' },
         'GCBallesteros/NotebookNavigator.nvim',
+
+        'NoahTheDuke/vim-just',
     }
 end
 
