@@ -168,31 +168,6 @@ autocmd('User', {
         }
 
         lsp.setup()
-
-        -- ipython
-        vim.api.nvim_set_hl(0, 'MoltenCell', {})
-        autocmd('FileType', {
-            pattern = { 'python' },
-            callback = function()
-                local nbv = require 'notebook-navigator'
-                nbv.setup { cell_markers = { python = "### %%%%%%%%%% ###" } }
-                local function map(mode, l, r, opts)
-                    opts = opts or { silent = true }
-                    vim.keymap.set(mode, l, r, opts)
-                end
-                map("n", "<space>i", ":MoltenInterrupt<CR>")
-                map("n", "<space>h", ":MoltenHideOutput<CR>")
-                map("n", "<space>o", ":noautocmd MoltenEnterOutput<CR>")
-                map('n', '<space>X', function() nbv.run_cell() end)
-                map('n', '<space>x', function() nbv.run_and_move() end)
-                map("v", "<space>x", function() vim.cmd "MoltenEvaluateVisual" end)
-                map('n', '<space>a', function() nbv.add_cell_above() end)
-                map('n', '<space>b', function() nbv.add_cell_below() end)
-                map('n', '<space>-', function() nbv.split_cell() end)
-                map('n', ']x', function() nbv.move_cell 'd' end)
-                map('n', '[x', function() nbv.move_cell 'u' end)
-            end
-        })
     end
 })
 
