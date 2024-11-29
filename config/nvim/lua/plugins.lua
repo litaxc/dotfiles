@@ -4,7 +4,7 @@ autocmd('User', {
     pattern = 'PaqDoneInstall',
     callback = function()
         -- colorscheme
-        vim.cmd 'colorscheme rose-pine-main'
+        vim.cmd 'colorscheme rose-pine-dawn'
 
         -- indent-blankline
         vim.opt.termguicolors = true
