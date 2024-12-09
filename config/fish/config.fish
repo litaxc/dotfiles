@@ -6,10 +6,6 @@ if status is-interactive
     abbr lg lazygit
     abbr py python
     abbr ipy ipython
-    abbr k kubectl
-    abbr tt "tmux -CC a -t"
-    abbr tn "tmux -CC new -s"
-    abbr n nerdctl
 
     vf install
     vf addplugins auto_activation

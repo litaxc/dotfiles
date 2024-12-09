@@ -16,14 +16,16 @@ function install_pkgs() {
         fish \
         fzf \
         git \
+        git-delta \
         glow \
+        just \
         lazygit \
         lua-language-server \
         neovim \
         ripgrep \
         ruff \
         tlrc \
-        tmux \
+        uv \
         virtualfish
 
     echo pkgs installed
@@ -34,7 +36,6 @@ function link_files() {
         config,$HOME/.config
         .gitconfig,$HOME/.gitconfig
         .gitignore_global,$HOME/.gitignore_global
-        tmux.conf,$HOME/.tmux.conf
     )
 
     BACKUP_DIR=$HOME/.dotfiles-$(date +%Y-%m-%dT%H:%M:%S)
