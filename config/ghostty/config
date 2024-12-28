@@ -1,0 +1,10 @@
+command = /opt/homebrew/bin/fish
+
+copy-on-select = true
+selection-invert-fg-bg = true
+
+theme = rose-pine-dawn
+font-size = 16
+
+window-height = 51
+window-width = 120
